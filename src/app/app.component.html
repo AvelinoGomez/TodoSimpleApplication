@@ -1,0 +1,35 @@
+<div class="container mt-4">
+
+  <h2 class="text-center mb-4">To Do Table</h2>
+
+  <form [formGroup]="form">
+
+    <div class="row">
+
+      <div class="col">
+        <custom-input 
+          placeholder="Insira o código do usuário"
+          type="number"
+          formControlName="user"
+        ></custom-input>
+      </div>
+
+      <div class="col">
+        <custom-input 
+          placeholder="Insira o título da atividade"
+          formControlName="title"
+        ></custom-input>
+      </div>
+      <div class="col-2">
+        <button type="button" [disabled]="form.invalid" (click)="createTodo()" class="w-100 btn btn-sm btn-success">Criar</button>
+      </div>
+  
+    </div>
+  
+    <div class="row mt-4">
+      <todo-list [todoList]="todoList"></todo-list>
+    </div>
+
+  </form>
+
+</div>
